@@ -60,4 +60,39 @@ Make sure MongoDB Atlas allows connections from all IPs (0.0.0.0/0)
 
 Use HTTPS when deploying production
 
-Tokens expire after 1 hour
+Tokens expire after 24 hour
+
+Register a new user
+
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "123456"
+}
+
+
+Login with that user
+
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "123456"
+}
+
+
+👉 Response will contain a JWT token, like:
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+
+
+Use that token in your weather request
+
+GET http://localhost:5000/weather/Azerbaijan
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
