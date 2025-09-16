@@ -29,3 +29,35 @@ npm install
 Start the server:
 
 npm run dev
+
+Deployment (Render)
+
+Push project to GitHub
+
+Create a Web Service in Render → Node environment
+
+Set environment variables (MONGO_URI, JWT_SECRET, PORT)
+
+Deploy → API will be live
+
+📚 Technologies
+
+Node.js
+
+Express.js
+
+MongoDB Atlas
+
+JWT Authentication
+
+Swagger (OpenAPI)
+
+bcryptjs
+
+⚠️ Notes
+
+Make sure MongoDB Atlas allows connections from all IPs (0.0.0.0/0)
+
+Use HTTPS when deploying production
+
+Tokens expire after 1 hour
