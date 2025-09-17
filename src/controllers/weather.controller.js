@@ -11,6 +11,15 @@ exports.getWeather = async (req, res) => {
   }
 };
 
+exports.getAllWeather = async(req,res) => {
+  try{
+    const weathers = await Weather.find(); // fetch all documents
+    res.json(weathers);
+  }catch(err){
+    res.status(500).json({ error: err.message })
+  }
+}
+
 exports.addWeather = async (req, res) => {
   try {
     const { country, temperature, condition } = req.body;
