@@ -13,6 +13,7 @@ connectDB();
 
 app.use("/auth", authRoutes);
 app.use("/weather", weatherRoutes);
+app.use("/", getAllWeather);
 
 swaggerDocs(app);
 

@@ -1,5 +1,5 @@
 const express = require("express");
-const { getWeather, addWeather } = require("../controllers/weather.controller");
+const { getWeather, addWeather ,getAllWeather  } = require("../controllers/weather.controller");
 const auth = require("../middlewares/auth.middleware");
 const router = express.Router();
 
@@ -10,7 +10,7 @@ const router = express.Router();
  *     summary: Get weather by country
  */
 router.get("/:country", auth, getWeather);
-
+router.get("/", auth, getAllWeather);
 /**
  * @swagger
  * /weather:
